@@ -1,4 +1,4 @@
-package com.promineotech.td;
+package com.promineotech;
 
 import java.util.Iterator;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package com.promineotech.td;
+package com.promineotech;
 
 public class TestDemoApp {
 

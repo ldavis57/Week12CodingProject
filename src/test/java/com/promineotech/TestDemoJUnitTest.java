@@ -14,7 +14,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import com.google.common.annotations.VisibleForTesting;
-import com.promineotech.td.TestDemo;
+import com.promineotech.TestDemo;
 
 import java.util.stream.Stream;
 
