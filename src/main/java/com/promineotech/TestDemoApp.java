@@ -12,7 +12,7 @@ public class TestDemoApp {
         System.out.println("Sum: " + sum);  // Expected output: 15
         
         // Call squareNumber() method with an integer and display the squared value
-        int squared = demo.squareNumber(4);
+        int squared = demo.squareNumber(-4);
         System.out.println("Squared: " + squared);  // Expected output: 16
         
         // Call randomNumberSquared() method and display the squared random number

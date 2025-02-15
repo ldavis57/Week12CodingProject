@@ -1,9 +1,6 @@
 package com.promineotech;
 
-import java.util.Iterator;
 import java.util.Random;
-
-import com.google.common.annotations.VisibleForTesting;
 
 public class TestDemo {
 
@@ -21,33 +18,9 @@ public class TestDemo {
 			throw new IllegalArgumentException("Both parameters must be positive!");
 		} // else {System.out.println(a + ", " + b );}
 			// int result = a + b;
-		System.out.print("Numbers to be added: " + a +"," + b + '\n');
+		System.out.print("Numbers to be added: " + a + "," + b + '\n');
 
 		return a + b;
-	}
-
-	/**
-	 * New JUnit Test 1, created before I saw the Mockito test
-	 * so I created New JUnit Test 2.
-	 * Computes the square of a given non-negative integer. Throws an
-	 * IllegalArgumentException if the input is negative.
-	 * 
-	 * @param number The integer to be squared
-	 * @return The squared value of the input number
-	 * @throws IllegalArgumentException if the number is negative
-	 */
-	public int squareNumber(int number) {
-		/*
-		 * This test was in my original code to test for a negative number
-		 * but there's really no reason to test for that. 
-		 * Leaving it in because I talked with Michael about it.
-		 */
-//		if (number < 0) {
-//			throw new IllegalArgumentException("Number must be non-negative!");
-//		}
-		
-		System.out.print("Number to be squared: " + number + '\n');
-		return number * number;
 	}
 
 	/**
@@ -58,7 +31,7 @@ public class TestDemo {
 	 */
 	public int randomNumberSquared() {
 		int result = getRandomInt();
-		
+
 		System.out.print("Random number: " + result + '\n');
 		return result * result;
 	}
@@ -69,15 +42,14 @@ public class TestDemo {
 	 *
 	 * @return a random integer between 1 and 10
 	 */
-	
+
 	public int getRandomInt() {
 		Random random = new Random();
 		return random.nextInt(10) + 1;
 	}
 
 	/**
-	 * New JUnit Test 2
-	 * Method to find the maximum of two integers.
+	 * New JUnit Test 2 Method to find the maximum of two integers.
 	 * 
 	 * @param a First integer.
 	 * @param b Second integer.
@@ -87,6 +59,27 @@ public class TestDemo {
 		System.out.print("First number: " + a + ", " + "Second number: " + b + '\n');
 
 		return (a > b) ? a : b;
+	}
+
+	/**
+	 * New JUnit Test 1, created before I saw the Mockito test so I created New
+	 * JUnit Test 2. Computes the square of a given integer. Throws an
+	 * IllegalArgumentException if the input is zero.
+	 *
+	 * In the real world there would usually be no need to exclude zero from a
+	 * squaring function. I include it purely for demo purposes.
+	 * 
+	 * @param number The integer to be squared
+	 * @return The squared value of the input number
+	 * @throws IllegalArgumentException if the number is zero
+	 */
+	public int squareNumber(int number) {
+		if (number == 0) {
+			throw new IllegalArgumentException("Number cannot be zero!");
+		}
+
+		System.out.print("Number to be squared: " + number + '\n');
+		return number * number;
 	}
 
 }

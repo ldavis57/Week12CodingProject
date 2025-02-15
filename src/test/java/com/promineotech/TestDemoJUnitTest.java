@@ -89,25 +89,23 @@ class TestDemoJUnitTest {
 		assertThat(testDemo.squareNumber(3)).isEqualTo(9);
 		assertThat(testDemo.squareNumber(5)).isEqualTo(25);
 		assertThat(testDemo.squareNumber(10)).isEqualTo(100); 
-		assertThat(testDemo.squareNumber(1001)).isEqualTo(1002001); 
-		assertThat(testDemo.squareNumber(-4)).isEqualTo(16); // Squaring negative number give positive result
-		assertThat(testDemo.squareNumber(0)).isEqualTo(0);   // Edge case: 0 squared is 0
+		assertThat(testDemo.squareNumber(1001)).isEqualTo(1002001); // Handling a large number
+		assertThat(testDemo.squareNumber(-4)).isEqualTo(16);        // Squaring negative number gives positive result
 	}
 	// @formatter:on
 
 	/*
-	 * My original test required no negative numbers to be squared. 
-	 * There's really no reason to do that but adding this method
-	 * would manage that exception.
+	 * In the real world there would usually be no need to exclude zero
+	 * from a squaring function. I include it purely for demo purposes.
 	 */
-//	@Test
-//	void assertThatNegativeNumberThrowsException() {
-//		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-//			testDemo.squareNumber(-4);
-//		});
-//
-//		assertThat(exception.getMessage()).isEqualTo("Number must be non-negative!");
-//	}
+	@Test
+	void assertThatNegativeNumberThrowsException() {
+		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+			testDemo.squareNumber(0);
+		});
+
+		assertThat(exception.getMessage()).isEqualTo("Number cannot be zero!");
+	}
 
 	@Test
 	void assertThatNumberSquaredIsCorrect() {
