@@ -24,6 +24,24 @@ public class TestDemo {
 	}
 
 	/**
+	 * New JUnit Test 1, created before I saw the Mockito test so I created New
+	 * JUnit Test 2 below. Computes the square of a given integer. Throws an
+	 * IllegalArgumentException if the input is zero.
+	 *
+	 * @param number The integer to be squared
+	 * @return The squared value of the input number
+	 * @throws IllegalArgumentException if the number is zero
+	 */
+	public int squareNumber(int number) {
+		if (number == 0) {
+			throw new IllegalArgumentException("Number cannot be zero!");
+		}
+
+		System.out.print("Number to be squared: " + number + '\n');
+		return number * number;
+	}
+
+	/**
 	 * Generates a random integer between 1 and 10 (inclusive) and returns its
 	 * square.
 	 *
@@ -59,27 +77,6 @@ public class TestDemo {
 		System.out.print("First number: " + a + ", " + "Second number: " + b + '\n');
 
 		return (a > b) ? a : b;
-	}
-
-	/**
-	 * New JUnit Test 1, created before I saw the Mockito test so I created New
-	 * JUnit Test 2. Computes the square of a given integer. Throws an
-	 * IllegalArgumentException if the input is zero.
-	 *
-	 * In the real world there would usually be no need to exclude zero from a
-	 * squaring function. I include it purely for demo purposes.
-	 * 
-	 * @param number The integer to be squared
-	 * @return The squared value of the input number
-	 * @throws IllegalArgumentException if the number is zero
-	 */
-	public int squareNumber(int number) {
-		if (number == 0) {
-			throw new IllegalArgumentException("Number cannot be zero!");
-		}
-
-		System.out.print("Number to be squared: " + number + '\n');
-		return number * number;
 	}
 
 }

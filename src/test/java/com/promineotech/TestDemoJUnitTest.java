@@ -66,14 +66,29 @@ class TestDemoJUnitTest {
 	static Stream<Arguments> argumentsForAddPositive() {
 		// @formatter:off
 		return Stream.of(
-			arguments(2, 4, 6, false), // Valid case: 2 + 4 = 6
+			arguments(2, 4, 6, false),    // Valid case: 2 + 4 = 6
 			arguments(10, 15, 25, false), // Valid case: 10 + 15 = 25
-			arguments(1, 1, 2, false), // Valid case: 1 + 1 = 2
-			arguments(-1, 5, 0, true), // Invalid case: -1 (exception expected)
-			arguments(3, 0, 0, true), // Invalid case: 0 (exception expected)
-			arguments(-2, -3, 0, true), // Invalid case: both negative (exception expected)
-			arguments(7, -1, 0, true) // Invalid case: one negative (exception expected)
+			arguments(1, 1, 2, false),    // Valid case: 1 + 1 = 2
+			arguments(-1, 5, 0, true),    // Invalid case: -1 (exception expected)
+			arguments(3, 0, 0, true),     // Invalid case: 0 (exception expected)
+			arguments(-2, -3, 0, true),   // Invalid case: both negative (exception expected)
+			arguments(7, -1, 0, true)     // Invalid case: one negative (exception expected)
 		);
+		// @formatter:on
+	}
+
+	/**
+	 * Another test for the {@code addPositive} using assertThat.
+	 */
+	@Test
+	void assertThatPairsOfPositiveNumbersAreAddedCorrectly() {
+		// @formatter:off
+		assertThat(testDemo.addPositive(4,5)).isEqualTo(9);
+		assertThat(testDemo.addPositive(40,50)).isEqualTo(90);
+		assertThat(testDemo.addPositive(501,609)).isEqualTo(1110);
+		assertThat(testDemo.addPositive(10,10)).isEqualTo(20); 
+		assertThat(testDemo.addPositive(1001,2000)).isEqualTo(3001); // Handling a large number
+		assertThat(testDemo.addPositive(4,17)).isEqualTo(21);        // Squaring negative number gives positive result
 		// @formatter:on
 	}
 
@@ -91,12 +106,12 @@ class TestDemoJUnitTest {
 		assertThat(testDemo.squareNumber(10)).isEqualTo(100); 
 		assertThat(testDemo.squareNumber(1001)).isEqualTo(1002001); // Handling a large number
 		assertThat(testDemo.squareNumber(-4)).isEqualTo(16);        // Squaring negative number gives positive result
+		// @formatter:on
 	}
-	// @formatter:on
 
 	/*
-	 * In the real world there would usually be no need to exclude zero
-	 * from a squaring function. I include it purely for demo purposes.
+	 * In the real world there would usually be no need to exclude zero from a
+	 * squaring function. I include it purely for demo purposes.
 	 */
 	@Test
 	void assertThatNegativeNumberThrowsException() {
@@ -109,10 +124,15 @@ class TestDemoJUnitTest {
 
 	@Test
 	void assertThatNumberSquaredIsCorrect() {
-		// Create a spy of the TestDemo instance
+		/*
+		 * Create a spy of the TestDemo instance. Spies wrap actual instances, enabling
+		 * the invocation of real methods unless explicitly stubbed
+		 */
 		TestDemo mockDemo = spy(new TestDemo());
 
-		// Mock the getRandomInt method to return 5
+		/*
+		 * Mock the getRandomInt method to return 5.
+		 */
 		doReturn(5).when(mockDemo).getRandomInt();
 
 		// Call the randomNumberSquared method
