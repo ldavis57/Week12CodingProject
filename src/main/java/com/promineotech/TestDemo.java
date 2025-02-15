@@ -37,9 +37,14 @@ public class TestDemo {
 	 * @throws IllegalArgumentException if the number is negative
 	 */
 	public int squareNumber(int number) {
-		if (number < 0) {
-			throw new IllegalArgumentException("Number must be non-negative!");
-		}
+		/*
+		 * This test was in my original code to test for a negative number
+		 * but there's really no reason to test for that. 
+		 * Leaving it in because I talked with Michael about it.
+		 */
+//		if (number < 0) {
+//			throw new IllegalArgumentException("Number must be non-negative!");
+//		}
 		
 		System.out.print("Number to be squared: " + number + '\n');
 		return number * number;
@@ -79,6 +84,8 @@ public class TestDemo {
 	 * @return The greater of the two integers.
 	 */
 	public int findMax(int a, int b) {
+		System.out.print("First number: " + a + ", " + "Second number: " + b + '\n');
+
 		return (a > b) ? a : b;
 	}
 

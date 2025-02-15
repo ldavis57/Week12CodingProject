@@ -2,19 +2,16 @@ package com.promineotech;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-
-import com.google.common.annotations.VisibleForTesting;
-import com.promineotech.TestDemo;
 
 import java.util.stream.Stream;
 
@@ -82,19 +79,35 @@ class TestDemoJUnitTest {
 
 	/**
 	 * New JUnit Test 1, created before I saw the Mockito test so I created New
-	 * JUnit Test 2. 
-	 * Tests the squareNumber method to ensure it returns the correct
+	 * JUnit Test 2. Tests the squareNumber method to ensure it returns the correct
 	 * squared value.
 	 */
 	@Test
 	void assertThatNumberIsSquaredCorrectly() {
+		// @formatter:off
 		assertThat(testDemo.squareNumber(2)).isEqualTo(4);
 		assertThat(testDemo.squareNumber(3)).isEqualTo(9);
 		assertThat(testDemo.squareNumber(5)).isEqualTo(25);
-		assertThat(testDemo.squareNumber(10)).isEqualTo(100); // Should throw AssertionFailedError
-		assertThat(testDemo.squareNumber(-4)).isEqualTo(16); // Squaring a negative should return a positive number
-		assertThat(testDemo.squareNumber(0)).isEqualTo(0); // Edge case: 0 squared is 0
+		assertThat(testDemo.squareNumber(10)).isEqualTo(100); 
+		assertThat(testDemo.squareNumber(1001)).isEqualTo(1002001); 
+		assertThat(testDemo.squareNumber(-4)).isEqualTo(16); // Squaring negative number give positive result
+		assertThat(testDemo.squareNumber(0)).isEqualTo(0);   // Edge case: 0 squared is 0
 	}
+	// @formatter:on
+
+	/*
+	 * My original test required no negative numbers to be squared. 
+	 * There's really no reason to do that but adding this method
+	 * would manage that exception.
+	 */
+//	@Test
+//	void assertThatNegativeNumberThrowsException() {
+//		Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+//			testDemo.squareNumber(-4);
+//		});
+//
+//		assertThat(exception.getMessage()).isEqualTo("Number must be non-negative!");
+//	}
 
 	@Test
 	void assertThatNumberSquaredIsCorrect() {
