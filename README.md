@@ -16,7 +16,14 @@
 <details>
   <summary>Java</summary>
   <ul>
-    <li><a href="https://www.java.com/en/">Typescript</a></li>
+    <li><a href="https://www.java.com/en/">Java</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Maven</summary>
+  <ul>
+    <li><a href="https://maven.apache.org/">Maven</a></li>
   </ul>
 </details>
 
