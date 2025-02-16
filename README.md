@@ -38,7 +38,7 @@ Clone the project
 🤝 Contact
 Lana Davis - davis.lanac@email_client.com
 
-Project Link: https://github.com/ldavis57/mysql-java-projects
+Project Link: https://github.com/ldavis57/Week12CodingProject
 
 <!-- Acknowledgments -->
 ## :gem: Acknowledgements
