@@ -36,7 +36,7 @@ Clone the project
   git clone https://github.com/ldavis57/Week12CodingProject
 ```
 🤝 Contact
-Lana Davis - davis.lanac@email_client.com
+Lana Davis - davis.lanac@gmail.com
 
 Project Link: https://github.com/ldavis57/Week12CodingProject
 
