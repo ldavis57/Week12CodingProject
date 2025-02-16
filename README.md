@@ -23,11 +23,11 @@
 <details>
 <summary>Mockito</summary>
   <ul>
-    <li><a href="https://site.mockito.org/</a></li>
+    <li><a href="https://site.mockito.org/">Mockito</a></li>
   </ul>
 </details>
-
 <!-- Run Locally -->
+
 ### :running: Run Locally
 
 Clone the project
